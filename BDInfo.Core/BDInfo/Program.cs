@@ -409,7 +409,6 @@ namespace BDInfo
 				double progressValue = Math.Round(progress * 100, 2);
 				if (progressValue < 0) progressValue = 0;
 				if (progressValue > 100) progressValue = 100;
-				progressBarScan.Value = progressValue;
 
 				TimeSpan elapsedTime = DateTime.Now.Subtract(scanState.TimeStarted);
 				TimeSpan remainingTime;
@@ -434,6 +433,8 @@ namespace BDInfo
 						remainingTime.Hours,
 						remainingTime.Minutes,
 						remainingTime.Seconds);
+
+				progressBarScan.Value = progressValue;
 			}
 			catch (Exception ex)
 			{
@@ -444,8 +445,8 @@ namespace BDInfo
 		private static void ScanBDROMCompleted()
 		{
 			labelProgress.Text = $"Scan complete.{new string(' ', 100)}";
-			progressBarScan.Value = 100;
 			labelTimeRemaining.Text = "Remaining: 00:00:00";
+			progressBarScan.Value = 100;
 
 			if (ScanResult.ScanException != null)
 			{
