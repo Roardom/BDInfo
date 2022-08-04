@@ -464,11 +464,11 @@ namespace BDInfo
 				}
 				else if (ScanResult.FileExceptions.Count > 0)
 				{
-					ConsoleWriteLine("Scan completed with errors (see report).");
+					ConsoleWriteLine($"{Environment.NewLine}Scan completed with errors (see report).");
 				}
 				else
 				{
-					ConsoleWriteLine("Scan completed successfully.");
+					ConsoleWriteLine($"{Environment.NewLine}Scan completed successfully.");
 				}
 			}
 		}
