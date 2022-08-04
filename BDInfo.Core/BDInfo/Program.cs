@@ -125,6 +125,9 @@ namespace BDInfo
 
 		private static void InitObjects()
 		{
+			Console.Write(new string('\n', 12));
+			Console.CursorTop -= 12;
+
 			int currentPos = IsNotExecutedAsScript() ? Console.CursorTop : 0;
 			textBoxDetails = new ListElement(currentPos);
 			textBoxSource = new ListElement(currentPos + 1);
